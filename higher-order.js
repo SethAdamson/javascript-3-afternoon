@@ -106,10 +106,7 @@ const orders = [{ "price": 15, "tax": 0.09 }, { "price": 42, "tax": 0.07 }, { "p
   Use a higher order method to get the sum of all the order totals after adding in the sales tax
 */
 
-let ordersTotal = orders.map((elem) => {
-  let prices = elem.price + elem.tax;
-})
-
+let ordersTotal = orders.map((elem) => elem.price *= (1 + elem.tax));
 
 
 ////////// PROBLEM 6 //////////
@@ -128,6 +125,6 @@ const purchases = [{ "owner": "Barry", "price": 103 }, { "owner": "Bob", "price"
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal = purchases.filter((elem) => elem.owner === "Bob").map((elem)=> elem.price).reduce((total, elem) => total += elem)
+let bobsTotal = purchases.filter((elem) => elem.owner === "Bob").map((elem) => elem.price).reduce((total, elem) => total += elem)
 
 
